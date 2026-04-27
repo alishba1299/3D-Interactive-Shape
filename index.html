@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Interactive Cube - Project 2</title>
+    <style>
+        body { margin: 0; background-color: #111; color: white; font-family: Arial; }
+        canvas { display: block; }
+        .info { position: absolute; top: 10px; width: 100%; text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="info">3D Cube Visualization (Move Mouse to Interact)</div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <script>
+        // 1. Scene Setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 2. Add a 3D Shape (Cube)
+        const geometry = new THREE.BoxGeometry(2, 2, 2);
+        const material = new THREE.MeshNormalMaterial();
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        // 3. Animation Logic
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+
+        // 4. Handle Window Resize
+        window.addEventListener('resize', () => {
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+        });
+
+        animate();
+    </script>
+</body>
+</html>
