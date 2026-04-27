@@ -1,12 +1,17 @@
-# 3D Graphics Visualization
-A lightweight 3D web application built using Three.js. This project demonstrates the ability to render real-time 3D objects in a browser environment.
+# 🌐 3D Interactive Space Visualizer
 
-## Tech Stack:
-- HTML5 / CSS3
-- JavaScript
-- Three.js Library (CDN)
+An interactive 3D web application built using **Three.js**. This project showcases real-time WebGL rendering and 3D geometry manipulation directly in the browser.
 
-## Key Learning:
-- Implementing a 3D Camera and Scene.
-- Working with WebGL rendering.
-- Real-time animation loops.
+## 🔗 Live Link
+Experience the 3D environment here: 
+[👉 View Live Project](https://alishba1299.github.io/3D-Interactive-Shape/)
+
+## 🛠 Tech Stack
+- **HTML5/CSS3**: Layout and styling.
+- **JavaScript**: Core logic.
+- **Three.js**: 3D engine for rendering the scene, camera, and geometry.
+
+## 🚀 Key Highlights
+- **Real-time Animation**: Smooth 60FPS rotation logic.
+- **Responsive Design**: Automatically adjusts to window resizing.
+- **Optimized Loading**: Uses CDN for lightweight performance.
